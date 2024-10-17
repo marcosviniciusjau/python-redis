@@ -22,7 +22,7 @@ class ProductFinder:
 
     return self.__format_response(product)
   
-  def find_in_cache(self,product_name: str)-> tuple:
+  def __find_in_cache(self,product_name: str)-> tuple:
     product_infos = self.__redis_repo.get_key(product_name)
     if product_infos:
       product_infos_list = product_infos.split(",")
